@@ -45,6 +45,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
+      # 권한 추가
+      - name: Make executable
+        run: chmod +x ./gradlew
+
       # Step 5: 테스트 실행
       - name: Run tests
         run: ./gradlew test
